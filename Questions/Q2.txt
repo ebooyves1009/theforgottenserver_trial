@@ -1,0 +1,7 @@
+function printSmallGuildNames(memberCount)
+-- this method is supposed to print names of all guilds that have less than memberCount max members
+for key,value in ipairs(guilds) do 
+if value.max_members < memberCount
+   print(value.name)
+end
+end

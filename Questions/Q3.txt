@@ -1,0 +1,13 @@
+
+function RemovePlayerItsParty(playerId, membername)
+player = Player(membername)
+local party = Player(playerId):getParty()
+local partyMembers = party:getMembers() 
+
+for k,v in pairs(partyMembers) do
+    if v == player then
+        party:removeMember(player)
+    end
+end
+
+end

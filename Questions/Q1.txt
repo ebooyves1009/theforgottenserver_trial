@@ -1,0 +1,20 @@
+--[Release the amount of storage used by a player--]
+local function releaseStorage(player, amount)
+--[Check if the player if valid--]
+if player then
+player:setStorageValue(amount, -1)
+end
+end
+
+
+function onLogout(player)
+local result = false
+--[Check if the player if valid--]
+if player then
+if player:getStorageValue(1000) == 1 then
+addEvent(releaseStorage(player,1000))
+end
+result = true
+end
+return result
+end
